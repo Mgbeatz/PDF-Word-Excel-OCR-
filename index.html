@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF → Word & Excel (OCR) — Demo</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- pdf.js (used to render PDF pages to canvas). -->
+  <!-- cdnjs / pdf.js recommended build. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
+
+  <!-- Tesseract.js (OCR in browser). -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.1.1/dist/tesseract.min.js"></script>
+
+  <!-- SheetJS / xlsx (create Excel files). Using sheetjs standalone build. -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+  <!-- html-docx-js (convert HTML string to .docx binary). -->
+  <script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+</head>
+<body>
+  <main>
+    <h1>PDF → Word & Excel (OCR)</h1>
+
+    <div id="drop-area" class="drop-area">
+      <p>Drag & drop one or more PDF files here, or</p>
+      <input id="fileElem" type="file" accept="application/pdf" multiple />
+      <label class="btn" for="fileElem">Choose PDFs</label>
+    </div>
+
+    <section id="jobs" class="jobs"></section>
+
+    <div class="controls">
+      <button id="downloadAll" disabled>Download last generated (DOCX + XLSX)</button>
+    </div>
+
+    <footer>
+      <small>Client-side demo using pdf.js, Tesseract.js, SheetJS (xlsx) and html-docx-js.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
